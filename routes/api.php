@@ -21,6 +21,7 @@ Route::get('/games','GamescheduleController@index');
 
 Route::get('/games/{id}', 'GamescheduleController@show');
 
+Route::get('/teams','TeamController@index');
 
 Route::post('/tips', 'TippingController@store');
 

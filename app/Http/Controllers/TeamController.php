@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Team;
 use Illuminate\Http\Request;
 
 class TeamController extends Controller
@@ -14,6 +15,9 @@ class TeamController extends Controller
     public function index()
     {
         //
+        $team = Team::all();
+
+        return \Response::json($team);
     }
 
     /**
