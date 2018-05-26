@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tipping;
+use App\Jobs\ProcessTipping;
 use Illuminate\Http\Response;
 
 class TippingController extends Controller
@@ -39,7 +40,9 @@ class TippingController extends Controller
         //
         $data = $request->all();
 
-        Tipping::create($data);
+        $item = Tipping::create($data);
+
+        ProcessTipping::dispatch($item->team);
 
         return \Response::json($data,201);
     }
