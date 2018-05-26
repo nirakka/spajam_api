@@ -16,7 +16,10 @@ class GamescheduleController extends Controller
     public function index()
     {
         //
-        
+        $game = GameSchedule::all()->toJson();
+
+        return $game;
+
     }
 
     /**
@@ -38,6 +41,7 @@ class GamescheduleController extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**
@@ -49,6 +53,13 @@ class GamescheduleController extends Controller
     public function show($id)
     {
         //
+        $game = GameSchedule::findOrFail($id);
+
+        $game->teamA;
+
+        $game->teamB;
+
+        return $game->toJson();
     }
 
     /**
