@@ -20,3 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/games','GamescheduleController@index');
 
 Route::get('/games/{id}', 'GamescheduleController@show');
+
+Route::get('/games/date/{date}','GamescheduleController@showByDate');
