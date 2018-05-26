@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tipping;
+use Illuminate\Http\Response;
 
 class TippingController extends Controller
 {
@@ -40,7 +41,7 @@ class TippingController extends Controller
 
         Tipping::create($data);
 
-        return response("hello",'201');
+        return \Response::json($data,201);
     }
 
     /**
