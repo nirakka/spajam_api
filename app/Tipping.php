@@ -17,7 +17,7 @@ class Tipping extends Model
         return $this->belongsTo('App\Team');
     }
 
-    public function gam(){
+    public function game(){
         return $this->belongsTo('App\GameSchedule','game_id', 'id');
     }
 }
