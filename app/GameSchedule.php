@@ -16,4 +16,8 @@ class GameSchedule extends Model
     public function teamB(){
         return $this->belongsTo('App\Team','team_b_id', 'id');
     }
+
+    public function result() {
+        return $this->hasOne('App\Result','game_id','id');
+    }
 }

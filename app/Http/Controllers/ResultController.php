@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
-use App\GameSchedule;
-use Illuminate\Support\Facades\DB;
-
-class GamescheduleController extends Controller
+class ResultController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,16 +14,6 @@ class GamescheduleController extends Controller
     public function index()
     {
         //
-        $game = GameSchedule::all();
-
-        foreach ($game as $item) {
-            $item->teamA;
-            $item->teamB;
-            $item->result;
-        }
-
-        return \Response::json($game);
-
     }
 
     /**
@@ -49,7 +35,6 @@ class GamescheduleController extends Controller
     public function store(Request $request)
     {
         //
-
     }
 
     /**
@@ -61,34 +46,6 @@ class GamescheduleController extends Controller
     public function show($id)
     {
         //
-        $game = GameSchedule::findOrFail($id);
-
-        $game->teamA;
-
-        $game->teamB;
-
-        $game->result;
-
-        return \Response::json($game);
-    }
-
-    /**
-     * @param $date
-     * @return games
-     */
-    public function showByDate($date) {
-
-        $game = GameSchedule::query()
-            ->where(DB::raw("DATE_FORMAT(start_time,'%Y%m%d')"),$date)
-            ->get();
-
-        foreach ($game as $item) {
-            $item->teamA;
-            $item->teamB;
-            $item->result;
-        }
-
-        return \Response::json($game);
     }
 
     /**
