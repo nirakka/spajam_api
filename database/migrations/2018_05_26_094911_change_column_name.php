@@ -16,6 +16,7 @@ class ChangeColumnName extends Migration
         Schema::table('game_schedules', function (Blueprint $table) {
             //
             $table->renameColumn('when', 'start_time')->change();
+            $table->renameColumn('where', 'place')->change();
         });
     }
 
@@ -29,6 +30,7 @@ class ChangeColumnName extends Migration
         Schema::table('game_schedules', function (Blueprint $table) {
             //
             $table->renameColumn('start_time', 'when')->change();
+            $table->renameColumn('place', 'where')->change();
         });
     }
 }
