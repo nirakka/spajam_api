@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\GameSchedule;
+
 class GamescheduleController extends Controller
 {
     /**
@@ -14,6 +16,7 @@ class GamescheduleController extends Controller
     public function index()
     {
         //
+        
     }
 
     /**
