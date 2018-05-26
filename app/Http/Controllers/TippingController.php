@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Tipping;
 
 class TippingController extends Controller
 {
@@ -35,6 +36,11 @@ class TippingController extends Controller
     public function store(Request $request)
     {
         //
+        $data = $request->all();
+
+        Tipping::create($data);
+
+        return response("hello",'201');
     }
 
     /**
