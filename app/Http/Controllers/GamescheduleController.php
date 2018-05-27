@@ -18,7 +18,7 @@ class GamescheduleController extends Controller
     public function index()
     {
         //
-        $game = GameSchedule::all();
+        $game = GameSchedule::orderBy('start_time','asc')->get();
 
         foreach ($game as $item) {
             $item->teamA;
@@ -80,6 +80,7 @@ class GamescheduleController extends Controller
 
         $game = GameSchedule::query()
             ->where(DB::raw("DATE_FORMAT(start_time,'%Y%m%d')"),$date)
+            ->orderBy('start_time','asc')
             ->get();
 
         foreach ($game as $item) {
